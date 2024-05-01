@@ -1,16 +1,14 @@
 ## AI Code Assistant
 
-[https://code.aniqa.dev/](https://code.aniqa.dev/)
 
 🤖 A simple but feature-rich coding assistance chat powered by AI with features that include pre-defined contexts (explain, refactor, debug and convert) to streamline the chat, built-in chat commands for enhanced guidance, automatic chat encoding, Prism.js syntax highlighting, downloadable chat history file optimized for printing and the ability to use the application as a PWA.
 
 ## Light Mode
 
-<a href="https://code.aniqa.dev" target="_blank"><img src="/src/assets/screenshot-light.png" style="max-width: 100%;"></a>
 
 ## Dark Mode
 
-<a href="https://code.aniqa.dev" target="_blank"><img src="/src/assets/screenshot.png" style="max-width: 100%;"></a>
+
 
 ## Tech
 
