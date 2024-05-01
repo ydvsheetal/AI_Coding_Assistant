@@ -1,4 +1,3 @@
-import { insertMessage } from "./insertMessage";
 import { commandsList, processCommand } from "../chat/chatCommands";
 import { processAPIResponse } from "../ai/api";
 
@@ -19,8 +18,9 @@ const textarea = document.querySelector("#js-user-form");
 
 textarea.addEventListener("submit", (event) => {
   event.preventDefault();
-  insertMessage("div", userInput.value, null, "user");
-
+  const input=userInput.value;
+  // insertMessage(input);
+  // console.log("\n")
   const currentInputValue = userInput.value.toLowerCase().trim();
   commandsList.includes(currentInputValue)
     ? processCommand(currentInputValue)

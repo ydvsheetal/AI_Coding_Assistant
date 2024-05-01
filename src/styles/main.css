@@ -4,7 +4,7 @@
 
 /* GENERAL */
 body {
-  @apply bg-violet-100 text-slate-950 dark:bg-zinc-900 dark:text-zinc-100;
+  @apply bg-green-100 text-slate-950 dark:bg-zinc-900 dark:text-zinc-100;
 }
 
 a {

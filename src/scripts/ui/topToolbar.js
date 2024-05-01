@@ -21,18 +21,24 @@ function displayTemporaryMessage(el, buttonText, message) {
   }, 600);
 }
 
-copyButton.addEventListener("click", async () => {
-  const codeBlocks = chatContainer.querySelectorAll("pre");
-  const recentCodeBlock = codeBlocks[codeBlocks.length - 1];
 
-  const textToCopy = recentCodeBlock?.textContent || "No code blocks detected";
-  await navigator.clipboard.writeText(textToCopy);
+copyButton.addEventListener('click', async () => {
+  try {
+    const recentCodeBlock =chatContainer.lastChild;
+    const textToCopy = recentCodeBlock.textContent; // Get the text content
+    await navigator.clipboard.writeText(textToCopy); // Copy to clipboard
+
+  } catch (err) {
+    console.error('Failed to copy content:', err); // Optional error handling
+  }
   displayTemporaryMessage(
-    copyButton,
-    "Copied",
-    "Copied latest code snippet...",
-  );
+        copyButton,
+        "Copied",
+        "Copied latest code snippet...",
+      );
 });
+
+
 
 saveButton.addEventListener("click", () => {
   saveChatHistory(); // saves to localStorage
@@ -49,15 +55,15 @@ helpButton.addEventListener("click", () => {
   processCommand("help");
 });
 
-clearButton.addEventListener("click", () => {
-  const messages = chatContainer.querySelectorAll(".js-message--chat");
-  messages.forEach((el) => el.remove()); // removes from DOM
-  clearChatHistory(); // removes from localStorage
-  chatInput.value = ""; // clears input
 
-  displayTemporaryMessage(
-    clearButton,
-    "Cleared",
-    "Chat deleted from workspace...",
-  );
-});
+
+clearButton.addEventListener("click", () => {
+  if (chatContainer.lastChild) {
+    chatContainer.removeChild(chatContainer.lastChild);
+  }
+    displayTemporaryMessage(
+      clearButton,
+      "Cleared",
+      "Chat deleted from workspace...",
+    );
+  });
