@@ -59,7 +59,7 @@ async function getGoogleAnswer(userInput) {
 // 	const response = await fetch(
 // 		"https://api-inference.huggingface.co/models/google/flan-t5-base",
 // 		{
-// 			headers: { Authorization: "Bearer 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" },
+// 			headers: { Authorization: "" },
 // 			method: "POST",
 // 			body: JSON.stringify(data),
 // 		}
